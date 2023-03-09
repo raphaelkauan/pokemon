@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package pokemon;
 
 /**
@@ -11,10 +7,10 @@ package pokemon;
 public class Pokemon {
 
     /**
-     * @param args the command line arguments
+     * @param args os argumentos da linha de comando
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Lógica de aplicação de código TODO aqui
     }
     
 }
