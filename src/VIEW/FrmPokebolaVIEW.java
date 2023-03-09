@@ -1,4 +1,3 @@
-
 package VIEW;
 
 import DAO.PokebolaDAO;
@@ -14,9 +13,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     }
 
     /**
-     * Este método é chamado de dentro do construtor para inicializar o formulário.
-     * ATENÇÃO: NÃO modifique este código. O conteúdo deste método é sempre
-     * regenerado pelo Editor de formulários
+     * Este método é chamado de dentro do construtor para inicializar o
+     * formulário. ATENÇÃO: NÃO modifique este código. O conteúdo deste método é
+     * sempre regenerado pelo Editor de formulários
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -86,16 +85,16 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome, raridade;
-        
+
         // Estou pegando na propriedade getText o que o usuário digitou no campo txtNome
         nome = txtNome.getText();
         raridade = txtRaridade.getText();
-        
+
         // Criando um objeto e transferindo informações para a DTO
         PokebolaDTO objpokeboladto = new PokebolaDTO();
         objpokeboladto.setNome_pokemon(nome);
         objpokeboladto.setRaridade_pokemon(raridade);
-        
+
         // Acessando minha class de conexão
         PokebolaDAO objpokeboladao = new PokebolaDAO();
         objpokeboladao.cadastrarPokemon(objpokeboladto);
