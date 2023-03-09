@@ -13,7 +13,7 @@ public class PokebolaDAO {
     PreparedStatement pstm;
 
     public void cadastrarPokemon(PokebolaDTO objpokeboladto) {
-        String sql = "insert into pokebola (nome_pokemon, raridade_pokemon) values (?, ?)";
+        String sql = "insert into captura_pokebola (nome_pokemon, raridade_pokemon) values (?, ?)";
 
         // Acessando a class de conexão
         conn = new ConexaoDAO().conectaBD();
