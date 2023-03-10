@@ -3,6 +3,7 @@ package DTO;
 public class PokebolaDTO {
 
     private String nome_pokemon, raridade_pokemon;
+    private int id_pokemon;
 
     // Métodos acessores
     public String getNome_pokemon() { // "Get" serve para pegar o valor que contem na variável
@@ -20,6 +21,20 @@ public class PokebolaDTO {
 
     public void setRaridade_pokemon(String raridade_pokemon) {
         this.raridade_pokemon = raridade_pokemon;
+    }
+
+    /**
+     * @return o id_pokémon
+     */
+    public int getId_pokemon() {
+        return id_pokemon;
+    }
+
+    /**
+     * @param id_pokemon o id_pokemon para definir
+     */
+    public void setId_pokemon(int id_pokemon) {
+        this.id_pokemon = id_pokemon;
     }
 
 }
