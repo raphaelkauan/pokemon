@@ -53,6 +53,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnCadastrar.setBackground(new java.awt.Color(0, 255, 0));
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         btnCadastrar.setText("CADASTRAR");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +76,8 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblPokemon);
 
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnPesquisar.setForeground(new java.awt.Color(0, 0, 0));
         btnPesquisar.setText("LISTAR");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +89,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
 
         txtCodigo.setEnabled(false);
 
+        btnCarregarCampos.setBackground(new java.awt.Color(51, 0, 255));
+        btnCarregarCampos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCarregarCampos.setForeground(new java.awt.Color(0, 0, 0));
         btnCarregarCampos.setText("CARREGAR CAMPOS");
         btnCarregarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +99,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpar.setText("LIMPAR");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +109,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnAlterar.setBackground(new java.awt.Color(255, 255, 0));
+        btnAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAlterar.setForeground(new java.awt.Color(0, 0, 0));
         btnAlterar.setText("ALTERAR");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +119,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnExcluir.setBackground(new java.awt.Color(255, 0, 0));
+        btnExcluir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExcluir.setForeground(new java.awt.Color(0, 0, 0));
         btnExcluir.setText("EXCLUIR");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,64 +138,64 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAlterar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnExcluir))
-                            .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLimpar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnPesquisar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCarregarCampos)))
-                        .addGap(40, 40, 40))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(btnCarregarCampos))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCadastrar)
                             .addComponent(btnAlterar)
                             .addComponent(btnExcluir))
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpar))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnLimpar)
+                        .addGap(202, 202, 202))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnPesquisar)
                             .addComponent(btnCarregarCampos))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
 
         pack();
@@ -354,14 +371,6 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         
         PokebolaDAO pokeboladao = new PokebolaDAO();
         pokeboladao.excluirPokemon(objpokeboladto);
-        
     }
+    
 }
-
-/*
- DECLARO VARIAVEIS/RECEBO NO CAMPO
- PASSO PARA A DTO
- EXECUTO A DAO
-
-
-*/
