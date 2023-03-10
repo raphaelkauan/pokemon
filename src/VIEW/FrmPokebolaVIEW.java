@@ -39,6 +39,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         btnCarregarCampos = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +105,13 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnExcluir.setText("EXCLUIR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,10 +124,12 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAlterar))
+                                .addComponent(btnAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnExcluir))
                             .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLimpar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -132,10 +142,8 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -158,7 +166,8 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCadastrar)
-                            .addComponent(btnAlterar))
+                            .addComponent(btnAlterar)
+                            .addComponent(btnExcluir))
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpar))
                     .addGroup(layout.createSequentialGroup()
@@ -200,6 +209,12 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         listarValoresPokemon();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        excluirPokemon();
+        listarValoresPokemon();
+        limparCamposTabela();
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     /**
      * @param args os argumentos da linha de comando
      */
@@ -240,6 +255,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCarregarCampos;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JLabel jLabel1;
@@ -325,4 +341,25 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         PokebolaDAO objpokeboladao = new PokebolaDAO(); // Executa a DAO!
         objpokeboladao.alterarPokemon(objpokeboladto); 
     }
+    
+    private void excluirPokemon() {
+        int id_pokemon;
+  
+        id_pokemon = Integer.parseInt(txtCodigo.getText());
+        
+        PokebolaDTO objpokeboladto = new PokebolaDTO();
+        objpokeboladto.setId_pokemon(id_pokemon);
+        
+        PokebolaDAO pokeboladao = new PokebolaDAO();
+        pokeboladao.excluirPokemon(objpokeboladto);
+        
+    }
 }
+
+/*
+ DECLARO VARIAVEIS/RECEBO NO CAMPO
+ PASSO PARA A DTO
+ EXECUTO A DAO
+
+
+*/

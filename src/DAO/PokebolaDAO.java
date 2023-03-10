@@ -31,6 +31,7 @@ public class PokebolaDAO { // Minha class começa aqui!
         try {
 
             preparedStatement = conn.prepareStatement(sql);
+            
             preparedStatement.setString(1, objpokeboladto.getNome_pokemon());
             preparedStatement.setString(2, objpokeboladto.getRaridade_pokemon());
 
@@ -71,12 +72,12 @@ public class PokebolaDAO { // Minha class começa aqui!
     // Método Alterar!
     public void alterarPokemon(PokebolaDTO objPokeboladto) {
         String sql = "update captura_pokebola set nome_pokemon = ?, raridade_pokemon = ? where id_pokemon = ?";
-
         conn = new ConexaoDAO().conectaBD();
 
         try {
 
             preparedStatement = conn.prepareStatement(sql); // Preparando a conexão, acessando minha class de conexão, preparando passando minhas informação sql
+           
             preparedStatement.setString(1, objPokeboladto.getNome_pokemon()); // 1 = primeiro ?, 2 = segundo ?, 3 = terceiro ?
             preparedStatement.setString(2, objPokeboladto.getRaridade_pokemon());
             preparedStatement.setInt(3, objPokeboladto.getId_pokemon());
@@ -88,4 +89,26 @@ public class PokebolaDAO { // Minha class começa aqui!
             JOptionPane.showMessageDialog(null, "Pokemon Alterar" + erro);
         }
     }
+    
+    // Método Excluir!
+    public void excluirPokemon(PokebolaDTO objpokeboladto) {
+        String sql = "delete from captura_pokebola where id_pokemon = ?";
+        
+         conn = new ConexaoDAO().conectaBD();
+
+        try {
+
+            preparedStatement = conn.prepareStatement(sql);
+            
+            preparedStatement.setInt(1, objpokeboladto.getId_pokemon());
+            
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Pokemon Excluir" + erro);
+        }
+    }
+    
 }
