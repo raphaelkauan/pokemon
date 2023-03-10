@@ -38,6 +38,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         txtCodigo = new javax.swing.JTextField();
         btnCarregarCampos = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,7 +72,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblPokemon);
 
-        btnPesquisar.setText("PESQUISAR");
+        btnPesquisar.setText("LISTAR");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarActionPerformed(evt);
@@ -96,6 +97,13 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnAlterar.setText("ALTERAR");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,8 +116,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLimpar))
-                            .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnAlterar))
+                            .addComponent(txtRaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLimpar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,9 +131,11 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -147,7 +158,9 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCadastrar)
-                            .addComponent(btnLimpar)))
+                            .addComponent(btnAlterar))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnPesquisar)
@@ -167,7 +180,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         cadastrarPokemon();
         listarValoresPokemon();
-        limparCampos();
+        limparCamposTabela();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -175,12 +188,17 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnCarregarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarCamposActionPerformed
-        carregarCampos();
+        carregarCamposTabela();
     }//GEN-LAST:event_btnCarregarCamposActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        limparCampos();
+        limparCamposTabela();
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        alterarPokemon();
+        listarValoresPokemon();
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
     /**
      * @param args os argumentos da linha de comando
@@ -219,6 +237,7 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCarregarCampos;
     private javax.swing.JButton btnLimpar;
@@ -234,22 +253,22 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cadastrarPokemon() {
-         String nome, raridade;
+        String nome, raridade; // Declaração de variáveis!
 
         // Estou pegando na propriedade getText o que o usuário digitou no campo txtNome
-        nome = txtNome.getText();
+        nome = txtNome.getText(); // Recebe esses valores!
         raridade = txtRaridade.getText();
 
         // Criando um objeto e transferindo informações para a DTO
-        PokebolaDTO objpokeboladto = new PokebolaDTO();
+        PokebolaDTO objpokeboladto = new PokebolaDTO(); // Passa para a DTO!
         objpokeboladto.setNome_pokemon(nome);
         objpokeboladto.setRaridade_pokemon(raridade);
 
         // Acessando minha class de conexão
-        PokebolaDAO objpokeboladao = new PokebolaDAO();
+        PokebolaDAO objpokeboladao = new PokebolaDAO(); // Executa a DAO!
         objpokeboladao.cadastrarPokemon(objpokeboladto);
     }
-    
+
     private void listarValoresPokemon() {
         try { // acessando a class DAO através do objeto
             PokebolaDAO objpokeboladao = new PokebolaDAO();
@@ -272,19 +291,38 @@ public class FrmPokebolaVIEW extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Listar Valores VIEW" + erro);
         }
     }
-    
-    private void carregarCampos() { // Método para carregar os campos
+
+    private void carregarCamposTabela() { // Método para carregar os campos
         int setar = tblPokemon.getSelectedRow();
-        
+
         txtCodigo.setText(tblPokemon.getModel().getValueAt(setar, 0).toString());
         txtNome.setText(tblPokemon.getModel().getValueAt(setar, 1).toString());
         txtRaridade.setText(tblPokemon.getModel().getValueAt(setar, 2).toString());
     }
-    
-    private void limparCampos() {
+
+    private void limparCamposTabela() {
         txtCodigo.setText("");
         txtNome.setText("");
         txtRaridade.setText("");
         txtNome.requestFocus();
+    }
+
+    private void alterarPokemon() {
+        int id_pokemon; 
+        String nome_pokemon, raridade_pokemon; // Declaração de variáveis!
+        
+        // OBS: Fazendo conversão no id
+        id_pokemon = Integer.parseInt(txtCodigo.getText()); // Recebe esses valores!
+        nome_pokemon = txtNome.getText(); 
+        raridade_pokemon = txtRaridade.getText();
+        
+        // OBS: Só acesso minha class através do meu objeto
+        PokebolaDTO objpokeboladto = new PokebolaDTO(); // Passa para a DTO!
+        objpokeboladto.setId_pokemon(id_pokemon); 
+        objpokeboladto.setNome_pokemon(nome_pokemon);
+        objpokeboladto.setRaridade_pokemon(raridade_pokemon);
+        
+        PokebolaDAO objpokeboladao = new PokebolaDAO(); // Executa a DAO!
+        objpokeboladao.alterarPokemon(objpokeboladto); 
     }
 }

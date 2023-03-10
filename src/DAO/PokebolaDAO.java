@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class PokebolaDAO { // Minha class começa aqui
+public class PokebolaDAO { // Minha class começa aqui!
 
     // conn é minha variável de conexão
     Connection conn;
@@ -21,6 +21,7 @@ public class PokebolaDAO { // Minha class começa aqui
     // ArrayList é uma classe para coleções
     ArrayList<PokebolaDTO> lista = new ArrayList<>();
 
+    //Método Cadastrar!
     public void cadastrarPokemon(PokebolaDTO objpokeboladto) {
         String sql = "insert into captura_pokebola (nome_pokemon, raridade_pokemon) values (?, ?)";
 
@@ -37,12 +38,11 @@ public class PokebolaDAO { // Minha class começa aqui
             preparedStatement.close();
 
         } catch (SQLException erro) {
-
             JOptionPane.showMessageDialog(null, "Pokemon Cadastrar" + erro);
         }
-
     }
 
+    // Método Pesquisar!
     public ArrayList<PokebolaDTO> pesquisarPokemon() {
         String sql = "select * from captura_pokebola";
         conn = new ConexaoDAO().conectaBD();
@@ -68,4 +68,24 @@ public class PokebolaDAO { // Minha class começa aqui
         return lista;
     }
 
+    // Método Alterar!
+    public void alterarPokemon(PokebolaDTO objPokeboladto) {
+        String sql = "update captura_pokebola set nome_pokemon = ?, raridade_pokemon = ? where id_pokemon = ?";
+
+        conn = new ConexaoDAO().conectaBD();
+
+        try {
+
+            preparedStatement = conn.prepareStatement(sql); // Preparando a conexão, acessando minha class de conexão, preparando passando minhas informação sql
+            preparedStatement.setString(1, objPokeboladto.getNome_pokemon()); // 1 = primeiro ?, 2 = segundo ?, 3 = terceiro ?
+            preparedStatement.setString(2, objPokeboladto.getRaridade_pokemon());
+            preparedStatement.setInt(3, objPokeboladto.getId_pokemon());
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Pokemon Alterar" + erro);
+        }
+    }
 }
