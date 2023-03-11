@@ -9,16 +9,15 @@ public class PokebolaDTO {
     public String getNome_pokemon() { // "Get" serve para pegar o valor que contem na variável
         return nome_pokemon;
     }
-
-    // "Set" serve para armazenar um valor na variável privada
-    public void setNome_pokemon(String nome_pokemon) {
+    
+    public void setNome_pokemon(String nome_pokemon) { // "Set" serve para receber o valor e atribuir na variável
         this.nome_pokemon = nome_pokemon;
     }
-
+    
     public String getRaridade_pokemon() {
         return raridade_pokemon;
     }
-
+    
     public void setRaridade_pokemon(String raridade_pokemon) {
         this.raridade_pokemon = raridade_pokemon;
     }

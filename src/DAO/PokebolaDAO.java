@@ -24,32 +24,32 @@ public class PokebolaDAO { // Minha class começa aqui!
     //Método Cadastrar!
     public void cadastrarPokemon(PokebolaDTO objpokeboladto) {
         String sql = "insert into captura_pokebola (nome_pokemon, raridade_pokemon) values (?, ?)";
-
-        // Acessando a class de conexão
-        conn = new ConexaoDAO().conectaBD();
+     
+        conn = new ConexaoDAO().conectaBD(); // Acessando a class de conexão
 
         try {
-
+            
             preparedStatement = conn.prepareStatement(sql);
             
             preparedStatement.setString(1, objpokeboladto.getNome_pokemon());
             preparedStatement.setString(2, objpokeboladto.getRaridade_pokemon());
-
+            
             preparedStatement.execute();
             preparedStatement.close();
-
+            
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Pokemon Cadastrar" + erro);
         }
     }
-
+    
     // Método Pesquisar!
     public ArrayList<PokebolaDTO> pesquisarPokemon() {
         String sql = "select * from captura_pokebola";
+        
         conn = new ConexaoDAO().conectaBD();
-
+            
         try {
-
+            
             preparedStatement = conn.prepareStatement(sql);
             rs = preparedStatement.executeQuery();
 
@@ -68,10 +68,11 @@ public class PokebolaDAO { // Minha class começa aqui!
         }
         return lista;
     }
-
+    
     // Método Alterar!
     public void alterarPokemon(PokebolaDTO objPokeboladto) {
         String sql = "update captura_pokebola set nome_pokemon = ?, raridade_pokemon = ? where id_pokemon = ?";
+        
         conn = new ConexaoDAO().conectaBD();
 
         try {
@@ -102,7 +103,6 @@ public class PokebolaDAO { // Minha class começa aqui!
             
             preparedStatement.setInt(1, objpokeboladto.getId_pokemon());
             
-
             preparedStatement.execute();
             preparedStatement.close();
 
