@@ -11,3 +11,4 @@ Calculadora desenvolvida durante um curso focado em Java
 
 <img height="160em" src="https://images7.alphacoders.com/592/592678.jpg"/>
 
+<img height="160em" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9dEW-PMZT9GEjUBwn_BiuFWUWnFFR3Q-dCdF2onkJ-rmzMmqK24GKXaDl5tAHPGJjcY&usqp=CAU"/>
