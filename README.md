@@ -1,6 +1,6 @@
 # Crud Pókemon
 
-### crud para aqueles amantes em java
+### ☕ crud para aqueles amantes em java
 
 💡 As seguintes Tecnologia foram usadas neste projeto:
 
