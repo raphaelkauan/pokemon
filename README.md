@@ -1,6 +1,6 @@
 # Crud Pókemon
 
-Calculadora desenvolvida durante um curso focado em Java
+crud para aqueles amantes em java
 
 💡 As seguintes Tecnologia foram usadas neste projeto:
 
