@@ -2,7 +2,7 @@
 
 Calculadora desenvolvida durante um curso focado em Java
 
-<img height="160em" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwall.alphacoders.com%2Ftag%2Fsnivy-%2528pokemon%2529-wallpapers%3Flang%3DPortuguese&psig=AOvVaw3Xnqwva0piBHgLcnJSIgyS&ust=1678936862585000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDipaz93P0CFQAAAAAdAAAAABAE"/>
+<img height="160em" src="https://images7.alphacoders.com/592/592678.jpg"/>
 
 💡 As seguintes Tecnologia foram usadas neste projeto:
 
