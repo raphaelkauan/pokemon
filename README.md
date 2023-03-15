@@ -9,6 +9,20 @@ Calculadora desenvolvida durante um curso focado em Java
 
 ## ⚙ Projeto desenvolvido pela IDE [Netbeans](https://netbeans.apache.org/download/index.html)
 
-<img height="160em" src="https://images7.alphacoders.com/592/592678.jpg"/>
+<table>
+  <tr>
+    <td align="center">   
+        <img height="160em" src="https://images7.alphacoders.com/592/592678.jpg"/><br>
+    </td>
+    <td align="center">      
+        <img height="160em" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9dEW-PMZT9GEjUBwn_BiuFWUWnFFR3Q-dCdF2onkJ-rmzMmqK24GKXaDl5tAHPGJjcY&usqp=CAU"/>
+    </td>
+  </tr>
+</table>
 
-<img height="160em" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9dEW-PMZT9GEjUBwn_BiuFWUWnFFR3Q-dCdF2onkJ-rmzMmqK24GKXaDl5tAHPGJjcY&usqp=CAU"/>
+
+[⬆ Voltar ao topo](#pokemon)<br>
+
+
+
+
