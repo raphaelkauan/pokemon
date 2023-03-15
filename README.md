@@ -20,6 +20,7 @@ Calculadora desenvolvida durante um curso focado em Java
   </tr>
 </table>
 
+### Obrigado por chegar até aqui!
 
 
 
