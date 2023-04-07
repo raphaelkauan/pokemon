@@ -20,7 +20,7 @@
   </tr>
 </table>
 
-### Feito com ❤ por [Raphael Kauan](https://www.linkedin.com/in/raphael-kauan-a62138251/)
+### Feito com ❤ por [Raphael Kauan](https://www.linkedin.com/in/raphael-kauan-a62138251/)!
 
 
 
